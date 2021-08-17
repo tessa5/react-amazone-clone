@@ -16,10 +16,10 @@ function Header() {
     const [ {basket, user}, dispatch] = useStateValue();
     return (
         
-            <div className="bg-black w-full h-16 flex items-center sticky top-0 z-50">
+            <div className="bg-black w-full h-auto flex flex-wrap p-2 flex-col md:flex-row items-center sticky top-0 z-50">
             <Link to="/"> 
             <img 
-            className="object-contain w-24 mx-5 mt-3"
+            className="object-contain w-24 mx-5 mt-3 flex mb-4 md:mb-0"
             alt="logo"
             src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
             /> {/*logo*/}
@@ -38,8 +38,8 @@ function Header() {
                     className="h-10 !important w-10 p-1 bg-yellow-500 rounded-r-sm"
                 />
             </div>
-            <nav className="nav">
-                <ul className="flex justify-evenly">
+            <nav className="nav ">
+                <ul className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-evenly">
                 <Link to={!user && '/login'}> 
                     <li 
                     className="nav-option flex flex-col mx-3 text-white"

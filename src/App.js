@@ -10,10 +10,15 @@ import Login from "./components/Login";
 import { auth } from "./components/Firebase";
 import { useStateValue } from "./components/StateProvider";
 import Payment from "./components/Payment";
-
+import { loadStripe } from '@stripe/stripe-js'
+import { Elements } from "@stripe/react-stripe-js"
 
 
 function App() {
+
+  const promise = loadStripe(
+    pk_test_51JPS9yDX0Bj270BNOWtYfdiQRUcdtw6xq4K6b50nvjB9tyLqzAUOnsXmKHf80raKk97HGYaJEx5OdDIzVqh3LLzS00rG104thI
+  )
 //this is a listener 
   const [{}, dispatch] = useStateValue();
     useEffect(() => {
