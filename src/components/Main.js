@@ -1,5 +1,6 @@
-import { Link } from '@material-ui/core'
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 function Main() {
     return (
@@ -11,6 +12,7 @@ function Main() {
                         src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_TallHero_Gamers_en_US_1x._CB667161802_.jpg"
                         alt="main-banner"
                     />
+                    
                     <div className="main-row flex z-30 mx-3">
                         <ul className="product flex-col items-center justify-end bg-white m-3 z-20 shadow">
                             <li className="info bg-white w-80 p-4 m-3 ">
@@ -20,7 +22,9 @@ function Main() {
                                     src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2019/July/amazonbasics_520x520._SY304_CB442725065_.jpg"
                                     alt="basics"
                                 />
-                                <Link className="text-blue-400">see more</Link>
+                                <Link to='/product'>
+                                    <p className="text-blue-400 mt-2">see more</p>
+                                </Link>
                             </li>
                         </ul>
                         <ul className="product flex-col items-center justify-end bg-white m-3 z-20 shadow">
@@ -31,7 +35,9 @@ function Main() {
                                     src="https://images-na.ssl-images-amazon.com/images/I/41pk3KgbeRL.jpg"
                                     alt="basics"
                                 />
-                                <Link className="text-blue-400">Shop now</Link>
+                                <Link to='/product'>
+                                    <p className="text-blue-400 mt-2">Shop now</p>
+                                </Link>
                             </li>
                         </ul>
                         <ul className="product flex-col items-center justify-end bg-white m-3 z-20 shadow">
@@ -42,14 +48,18 @@ function Main() {
                                     src="https://images-na.ssl-images-amazon.com/images/G/01/events/GFAH/GWDesktop_SingleImageCard_fitathome_1x._SY304_CB434924743_.jpg"
                                     alt="basics"
                                 />
-                                <Link className="text-blue-400">Explore now</Link>
+                                <Link to='/product'>
+                                    <p className="text-blue-400 mt-2">Explore now</p>
+                                </Link>
                             </li>
                         </ul>
                         <ul className="product flex-col items-center justify-end z-20 w-96">
                             <li className="info w-96 p-4 mt-3 ">
                                 <div className="pt-4 pb-12 px-3 -mt-3 bg-white">
                                     <p className="font-bold text-xl mb-3">Sign in for the best experience</p>
-                                    <botton className=" px-28 py-1 font-light text-sm bg-yellow-300 rounded-lg">Sign in securely</botton>
+                                    <Link to="login">
+                                        <botton className=" px-28 py-1 font-light text-sm bg-yellow-300 rounded-lg">Sign in securely</botton>
+                                    </Link>
                                 </div>
                                 <img
                                     className="mt-16 mx-auto w-72"
@@ -68,7 +78,9 @@ function Main() {
                                     src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Dash_Oculus_1x._SY304_CB667158353_.jpg"
                                     alt="basics"
                                 />
-                                <Link className="text-blue-400">Shop now</Link>
+                                <Link to='/product'>
+                                    <p className="text-blue-400">Shop now</p>
+                                </Link>
                             </li>
                         </ul>
                         <ul className="product flex-col items-center justify-end bg-white m-3 z-20 shadow">
@@ -79,7 +91,9 @@ function Main() {
                                     src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_PC_1x._SY304_CB431800965_.jpg"
                                     alt="basics"
                                 />
-                                <Link className="text-blue-400">Shop now</Link>
+                                <Link to='/product'>
+                                    <p className="text-blue-400 mt-2">Shop now</p>
+                                </Link>
                             </li>
                         </ul>
                         <ul className="product flex-col items-center justify-end bg-white m-3 z-20 shadow">
@@ -115,7 +129,9 @@ function Main() {
                                 /><small className=" mb-8">Chairs</small>
                                 </div>
                                 </div>
-                                <Link className="text-blue-400">See more</Link>
+                                <Link to="/product">
+                                <p className="text-blue-400">See more</p>
+                                </Link>
                             </li>
                         </ul>
                         <ul className="product flex-col items-center justify-end bg-white m-3 z-20 shadow">
@@ -126,15 +142,20 @@ function Main() {
                                     src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_TV_2X._SY304_CB432517900_.jpg"
                                     alt="basics"
                                 />
-                                <Link className="text-blue-400">Explore now</Link>
+                                <Link to='/product'>
+                                    <p className="text-blue-400">Explore now</p>
+                                </Link>
                             </li>
                         </ul>
                         
                     </div>
                     <div className="main-row-full z-30 mx-3 bg-white shadow">
                     <div className="info w-full flex justify-right text-center m-3">
-                                <p className="font-bold text-xl mb-3 -mt-3">Top Beauty & Personal Care products
-                                <Link className="text-blue-400 font-normal ml-3">Shop now</Link></p>
+                                <p className="font-bold text-xl mb-3 -mt-3 ">Top Beauty & Personal Care products
+                                <Link to='/product' className="text-blue-400 font-normal ml-3">
+                                    Shop now
+                                </Link>
+                                </p>
                                 </div>
                         <div className="product flex z-20">
                                 <img
@@ -208,7 +229,9 @@ function Main() {
                                 /><small className=" mb-8">Easy tees</small>
                                 </div>
                                 </div>
-                                <Link className="text-blue-400">See more</Link>
+                                <Link to="/product">
+                                    <p className="text-blue-400">See more</p>
+                                </Link>
                             </li>
                         </ul>
                         <ul className="product flex-col items-center justify-end bg-white m-3 z-20 shadow">
@@ -219,7 +242,9 @@ function Main() {
                                     src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_Laptops_379x304_1X_en_US._SY304_CB418608471_.jpg"
                                     alt="basics"
                                 />
-                                <Link className="text-blue-400">See more</Link>
+                                <Link to='/product'>
+                                    <p className="text-blue-400">See more</p>
+                                </Link>
                             </li>
                         </ul>
                         <ul className="product flex-col items-center justify-end bg-white m-3 z-20 shadow">
@@ -230,7 +255,9 @@ function Main() {
                                     src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_HomeBedding_Single_Cat_1x._SY304_CB418596953_.jpg"
                                     alt="basics"
                                 />
-                                <Link className="text-blue-400">See more</Link>
+                                <Link to='/product'>
+                                <p className="text-blue-400">See more</p>
+                                </Link>
                             </li>
                         </ul>
                         <ul className="product flex-col items-center justify-end bg-white m-3 z-20 shadow">
@@ -266,7 +293,9 @@ function Main() {
                                 /><small className=" mb-8">Mugs</small>
                                 </div>
                                 </div>
-                                <Link className="text-blue-400">See more</Link>
+                                <Link to='/product'>
+                                    <p className="text-blue-400">See more</p>
+                                </Link>
                             </li>
                         </ul>
                     </div>

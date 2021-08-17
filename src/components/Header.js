@@ -1,18 +1,29 @@
 import React from 'react'
 import SearchIcon from "@material-ui/icons/Search";
 import { LocationOnOutlined, ShoppingBasketRounded } from '@material-ui/icons';
+import { Link } from 'react-router-dom'
+import { useStateValue } from './StateProvider';
+import { auth } from './Firebase';
 
 function Header() {
+
+    const handleAuthen = () => {
+        if (user) {
+            auth.signOut();
+        }
+    }
+
+    const [ {basket, user}, dispatch] = useStateValue();
     return (
         
             <div className="bg-black w-full h-16 flex items-center sticky top-0 z-50">
-            {/* <Link to="/"> */}
+            <Link to="/"> 
             <img 
             className="object-contain w-24 mx-5 mt-3"
             alt="logo"
             src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
             /> {/*logo*/}
-            {/* </Link> */}
+            </Link> 
             <div className="nav-option flex flex-col mx-3 text-white">
                 <span className="text-xs font-light ">Deliver to</span>
                 <span className="font-semibold text-lg -ml-4"><LocationOnOutlined/>Kenya</span>
@@ -29,15 +40,15 @@ function Header() {
             </div>
             <nav className="nav">
                 <ul className="flex justify-evenly">
-                {/* <Link to={!user && '/login'}> */}
+                <Link to={!user && '/login'}> 
                     <li 
                     className="nav-option flex flex-col mx-3 text-white"
-                    // onClick={handleAuthorization}
+                    onClick={handleAuthen}
                     >
-                        <span className="text-xs font-light">Hello Guest {/*{!user ? 'Guest' : user.email}*/}</span> 
-                    <span className="font-bold text-lg">Sign In{/*{user ? 'sign Out' : 'Sign In'}*/}</span>
+                        <span className="text-xs font-light">Hello {!user ? 'Guest' : user.email}</span> 
+                    <span className="font-bold text-lg">{user ? 'sign Out' : 'Sign In'}</span>
                     </li>
-                    {/* </Link> */}
+                    </Link> 
                     <li className="nav-option flex flex-col mx-3 text-white">
                         <span className="text-xs font-light">Returns</span>
                         <span className="font-bold text-lg">& Orders</span>
@@ -49,10 +60,10 @@ function Header() {
                 </ul>
             </nav>
             <div className="basket text-white flex items-center">
-                {/* <Link to="/checkout"> */}
+            <Link to="/checkout"> 
                     <ShoppingBasketRounded/>
-                <span className="font-bold text-lg text-white mx-3"> 0 {/*{basket?.length}*/}</span>
-                {/* </Link> */}
+                <span className="font-bold text-lg text-white mx-3"> {basket?.length}</span>
+            </Link> 
             </div>
         </div>
     )
