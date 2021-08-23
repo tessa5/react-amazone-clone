@@ -27,8 +27,8 @@ useEffect(() => {
 }, [user])
 
     return (
-        <div>
-            <h2>Your Orders</h2>
+        <div className="px-8 py-16">
+            <h2 className="mx-8 mb-3 font-bold ">Your Orders</h2>
             <div className="orders">
                 {orders?.map(order => (
                     <Order order={order}/>
