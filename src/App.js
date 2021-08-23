@@ -12,12 +12,13 @@ import { useStateValue } from "./components/StateProvider";
 import Payment from "./components/Payment";
 import { loadStripe } from '@stripe/stripe-js'
 import { Elements } from "@stripe/react-stripe-js"
+import Orders from "./components/Orders";
 
 
 function App() {
 
   const promise = loadStripe(
-    pk_test_51JPS9yDX0Bj270BNOWtYfdiQRUcdtw6xq4K6b50nvjB9tyLqzAUOnsXmKHf80raKk97HGYaJEx5OdDIzVqh3LLzS00rG104thI
+    "pk_test_51JPS9yDX0Bj270BNOWtYfdiQRUcdtw6xq4K6b50nvjB9tyLqzAUOnsXmKHf80raKk97HGYaJEx5OdDIzVqh3LLzS00rG104thI"
   )
 //this is a listener 
   const [{}, dispatch] = useStateValue();
@@ -28,16 +29,16 @@ function App() {
         if (authUser) {
             dispatch({
               type: 'SET_USER',
-              user: authUser
+              user: authUser,
             })
         } else {
             dispatch({
               type: 'SET_USER',
-              user: null
+              user: null,
             })
         }
-      })
-    }, [])
+      });
+    }, []);
 
   return (
     <Router>
@@ -46,6 +47,10 @@ function App() {
       <Switch>
         <Route path='/login'>
           <Login/>
+        </Route>
+        <Route path='/orders'>
+          <Header/>
+          <Orders/>
         </Route>
         <Route path='/product'>
           <Header/>
@@ -57,14 +62,16 @@ function App() {
         </Route>
         <Route path='/payment'>
             <Header/>
+            <Elements stripe={promise}>
             <Payment/>
+            </Elements>
         </Route>
         <Route path='/'>
           <Header/>
           <Main/>
           <Features/>
           <Footer/>
-      </Route>
+        </Route>
       </Switch>
     </div>
     </Router>

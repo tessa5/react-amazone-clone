@@ -12,16 +12,16 @@ function ProductCheckout({id, image, title, rating, price, hideButton}) {
         })
     }
     return (
-        <div className="">
+        <div className="flex m-8">
             <img 
-            className=""
+            className="object-contain w-48 h-48"
             src={image}
             alt="product"
             />
-            <div className="product_info">
+            <div className="pl-8 text-left">
                 <p className="">{title}</p>
                 <p className="">
-                    <small>KES</small>
+                    <small>$</small>
                     <strong>{price}</strong>
                 </p>
                 <p className="ratings text-yellow-200">

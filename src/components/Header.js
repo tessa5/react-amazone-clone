@@ -28,7 +28,7 @@ function Header() {
                 <span className="text-xs font-light ">Deliver to</span>
                 <span className="font-semibold text-lg -ml-4"><LocationOnOutlined/>Kenya</span>
             </div>
-            <div className="flex items-center w-2/3 ml-3">
+            <div className="flex flex-1 items-center ml-3">
                 <input
                 className="outline-none rounded-l-sm h-10 !important p-3 w-full"
                 type="text"
@@ -46,13 +46,15 @@ function Header() {
                     onClick={handleAuthen}
                     >
                         <span className="text-xs font-light">Hello {!user ? 'Guest' : user.email}</span> 
-                    <span className="font-bold text-lg">{user ? 'sign Out' : 'Sign In'}</span>
+                        <span className="font-bold text-lg">{user ? 'sign Out' : 'Sign In'}</span>
                     </li>
                     </Link> 
-                    <li className="nav-option flex flex-col mx-3 text-white">
-                        <span className="text-xs font-light">Returns</span>
-                        <span className="font-bold text-lg">& Orders</span>
-                    </li>
+                <Link to="/orders">
+                        <li className="nav-option flex flex-col mx-3 text-white">
+                            <span className="text-xs font-light">Returns</span>
+                            <span className="font-bold text-lg">& Orders</span>
+                        </li>
+                </Link>
                     <li className="nav-option flex flex-col mx-3 text-white">
                         <span className="text-xs font-light">Your</span>
                         <span className="font-bold text-lg">Prime</span>

@@ -1,20 +1,27 @@
 export const initialState = {
     basket: [],
     user: null
-}
+};
 
 export const getBasketTotal = (basket) => 
-    basket?.reduce((amount, item) => {
-        console.log('amount', amount)
-        console.log('item', item)
-        return item.price + amount
-    }
-    // item.price + amount
+    basket?.reduce((amount, item) => 
+    // {
+    //     console.log('amount', amount)
+    //     console.log('item', item)
+    //     return item.price + amount
+    // }
+    item.price + amount
     , 0);
 
 const reducer = (state, action) => {
     console.log(action);
     switch(action.type) {
+
+        case 'EMPTY_BASKET': 
+            return {
+                ...state,
+                basket: []
+            }
         case 'ADD_TO_BASKET':
             return {
                 ...state,
